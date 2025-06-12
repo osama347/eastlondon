@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { createClient } from "@/utils/supabase/client";
 import {
   Card,
   CardContent,
@@ -92,7 +92,7 @@ export default function ReportsPage() {
   const [timeRange, setTimeRange] = useState("month");
   const [monthlyPayments, setMonthlyPayments] = useState<MonthlyPayment[]>([]);
   const [selectedReport, setSelectedReport] = useState<ReportType>("overview");
-  const supabase = createClientComponentClient();
+  const supabase = createClient();
   const reportRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

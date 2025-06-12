@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { createClient } from "@/utils/supabase/client";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import {
   Card,
@@ -62,7 +62,7 @@ export default function MemberDetailPage() {
   const [memberData, setMemberData] = useState<MemberData | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
-  const supabase = createClientComponentClient();
+  const supabase = createClient();
 
   const months = [
     "Jan",

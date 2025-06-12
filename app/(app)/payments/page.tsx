@@ -41,6 +41,7 @@ import {
 } from "@/components/ui/select";
 import { Plus, Search, Edit, Trash2, DollarSign, Printer } from "lucide-react";
 import { toast } from "sonner";
+import { createClient } from "@/utils/supabase/client";
 
 interface Payment {
   id: string;
